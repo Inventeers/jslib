@@ -1,0 +1,25 @@
+{
+  "name": "inventeers-jslib",
+  "version": "0.0.1",
+  "description": "Javascript library with utilities, shims and polyfills",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Inventeers/jslib.git"
+  },
+  "author": "Koos van Egmond",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/Inventeers/jslib/issues"
+  },
+  "homepage": "https://github.com/Inventeers/jslib",
+  "devDependencies": {
+    "grunt": "^0.4.4",
+    "grunt-contrib-concat": "^0.4.0",
+    "grunt-contrib-uglify": "^0.4.0",
+    "grunt-contrib-watch": "^0.6.1"
+  }
+}
