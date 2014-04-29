@@ -3,7 +3,9 @@ module.exports = function(grunt) {
 	var srcFiles = {
 		utils: [
 			'<%= dirs.srcUtils %>/intro.js',
-			'<%= dirs.srcUtils %>/Class.js',
+			'<%= dirs.srcUtils %>/toBool.js',
+			'<%= dirs.srcUtils %>/toInt.js',
+			'<%= dirs.srcUtils %>/I.Class.js',
 			'<%= dirs.srcUtils %>/outro.js'
 		],
 		shims: [
