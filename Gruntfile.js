@@ -2,16 +2,18 @@ module.exports = function(grunt) {
 
 	var srcFiles = {
 		utils: [
-			'intro.js',
-			'outro.js'
+			'<%= dirs.srcUtils %>/intro.js',
+			'<%= dirs.srcUtils %>/Class.js',
+			'<%= dirs.srcUtils %>/outro.js'
 		],
 		shims: [
-			'intro.js',
-			'outro.js'
+			'<%= dirs.srcShims %>/intro.js',
+			'<%= dirs.srcShims %>/outro.js'
 		],
 		polyfills: [
-			'intro.js',
-			'outro.js'
+			'<%= dirs.srcPolyfills %>/intro.js',
+			'<%= dirs.srcPolyfills %>/Function.prototype.bind.js',
+			'<%= dirs.srcPolyfills %>/outro.js'
 		]
 	},
 	banner = [
@@ -34,17 +36,48 @@ module.exports = function(grunt) {
 		pkg: grunt.file.readJSON('package.json'),
 		dirs: {
 			build: "build",
-			src: "src"
+			src: "src",
+			srcUtils: "<%= dirs.src %>/utils",
+			srcShims: "<%= dirs.src %>/shims",
+			srcPolyfills: "<%= dirs.src %>/polyfills"
 		},
 		files: {
 			build: "<%= dirs.build %>/<%= pkg.name %>-<%= pkg.version %>.js",
 			buildMin: "<%= dirs.build %>/<%= pkg.name %>-<%= pkg.version %>.min.js",
-			utils: "<%= dirs.build %>/utils.js",
-			shims: "<%= dirs.build %>/shims.js"
-			polyfills: "<%= dirs.build %>/polyfills.js"
-		}
-		concat: {},
-		uglify: {},
+			buildUtils: "<%= dirs.build %>/utils.js",
+			buildShims: "<%= dirs.build %>/shims.js",
+			buildPolyfills: "<%= dirs.build %>/polyfills.js"
+		},
+		concat: {
+			buildUtils: {
+				src: srcFiles.utils,
+				dest: '<%= files.buildUtils %>'
+			},
+			buildShims: {
+				src: srcFiles.shims,
+				dest: '<%= files.buildShims %>'
+			},
+			buildPolyfills: {
+				src: srcFiles.polyfills,
+				dest: '<%= files.buildPolyfills %>'
+			},
+			dist: {
+				options: {
+					banner: banner
+				},
+				src: ['<%= files.buildUtils %>', '<%= files.buildShims %>', '<%= files.buildPolyfills %>'],
+				dest: '<%= files.build %>'
+			}
+		},
+		uglify: {
+			options: {
+				banner: banner
+			},
+			dist: {
+				src: '<%= files.build %>',
+				dest: '<%= files.buildMin %>'
+			}
+		},
 		watch: {
 			scripts: {
 				files: ['<%= dirs.src %>/**/*.js'],
