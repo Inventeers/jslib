@@ -14,6 +14,7 @@ module.exports = function(grunt) {
 		],
 		polyfills: [
 			'<%= dirs.srcPolyfills %>/intro.js',
+			'<%= dirs.srcPolyfills %>/Object.create.js',
 			'<%= dirs.srcPolyfills %>/Function.prototype.bind.js',
 			'<%= dirs.srcPolyfills %>/outro.js'
 		]
