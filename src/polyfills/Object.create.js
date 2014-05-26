@@ -1,6 +1,6 @@
 /**
- * Source:
- * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create#Polyfill
+ * Polyfill for Object.create
+ * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create#Polyfill
  */
 if (typeof Object.create != 'function') {
 	(function() {

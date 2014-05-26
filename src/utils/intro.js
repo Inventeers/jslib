@@ -8,3 +8,4 @@
 	 */
 	var I = root.I || {};
 	
+	I.noop = function() {};

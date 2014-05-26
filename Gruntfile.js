@@ -10,12 +10,14 @@ module.exports = function(grunt) {
 		],
 		shims: [
 			'<%= dirs.srcShims %>/intro.js',
+			'<%= dirs.srcShims %>/DOMReady.js',
 			'<%= dirs.srcShims %>/outro.js'
 		],
 		polyfills: [
 			'<%= dirs.srcPolyfills %>/intro.js',
 			'<%= dirs.srcPolyfills %>/Object.create.js',
 			'<%= dirs.srcPolyfills %>/Function.prototype.bind.js',
+			'<%= dirs.srcPolyfills %>/events.js',
 			'<%= dirs.srcPolyfills %>/outro.js'
 		]
 	},

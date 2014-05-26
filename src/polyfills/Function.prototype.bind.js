@@ -1,6 +1,6 @@
 /**
- * Source:
- * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind#Compatibility
+ * Polyfill for Function.protoype.bind
+ * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind#Compatibility
  */
 if (!Function.prototype.bind) {
 	Function.prototype.bind = function (oThis) {
